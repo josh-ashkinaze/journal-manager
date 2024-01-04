@@ -68,7 +68,7 @@ elif [[ "$1" =~ ^--([0-9]{4}-[0-9]{2}-[0-9]{2})$ ]]; then
 else
     # Default behavior: Open today's journal entry
     current_datetime="**$(date +"%A %Y-%m-%d %T")**"
-    current_date=$(date +"%Y_%m_%d")
+    current_date=$(date +"%Y-%m-%d")
     file_path="$directory/$current_date.md"
     if [ -e "$file_path" ]; then
         if [ "$append_dt" == "Y" ]; then
