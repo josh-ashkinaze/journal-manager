@@ -45,6 +45,8 @@ cat_file() {
     cat "$file_path"
     echo "Displayed journal entry in terminal from $file_path"
 }
+
+
 ###############################
 
 # MAIN 
@@ -67,7 +69,7 @@ elif [ "$1" == "-rt" ]; then
 elif [ "$1" == "-d" ]; then
     # Open a journal entry for a specific date in app
     specific_date="$2"
-    file_path="$directory/${specific_date//[-]/_}.md"
+    file_path="$directory/${specific_date}.md"
     if [ -e "$file_path" ]; then
         open_file "$file_path"
     else
@@ -76,12 +78,22 @@ elif [ "$1" == "-d" ]; then
 elif [ "$1" == "-dt" ]; then
     # Display a journal entry for a specific date in terminal
     specific_date="$2"
-    file_path="$directory/${specific_date//[-]/_}.md"
+    file_path="$directory/${specific_date}.md"
     if [ -e "$file_path" ]; then
         cat_file "$file_path"
     else
         echo "No journal entry found for $specific_date"
     fi
+
+# Add a new elif branch in your main conditional
+elif [ "$1" == "-c" ]; then
+    # Display the calendar with journal entry markers
+    if [ "$2" ]; then
+        display_calendar "$2"
+    else
+        display_calendar
+    fi
+
 else
     # Default behavior: Open today's journal entry
     current_datetime="**$(date +"%A %Y-%m-%d %T")**"
