@@ -85,15 +85,6 @@ elif [ "$1" == "-dt" ]; then
         echo "No journal entry found for $specific_date"
     fi
 
-# Add a new elif branch in your main conditional
-elif [ "$1" == "-c" ]; then
-    # Display the calendar with journal entry markers
-    if [ "$2" ]; then
-        display_calendar "$2"
-    else
-        display_calendar
-    fi
-
 else
     # Default behavior: Open today's journal entry
     current_datetime="**$(date +"%A %Y-%m-%d %T")**"
