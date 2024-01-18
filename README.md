@@ -3,6 +3,12 @@ This is a bash script for managing journal entries.
 Journaling has numerous mental health benefits, can help you clarify ideas, and (maybe?) improve writing. For these reasons, I wanted to start writing 750 words in the morning each day. But I quickly found many existing journaling apps are bloated, possibly in their 'enshitification' phase [1]. This script has basic features to create ISO-formatted markdown files controlled via terminal, which is basically all you need. 
 
 ```
+# DOCUMENTATION
+###############################
+# AUTHOR: Joshua Ashkinaze
+# DATE: 2024-01-02  
+# DESCRIPTION: Minimalist journal entry manager. Creates ISO-formatted markdown files in a directory and opens in app of choice or displays in terminal. 
+
 # USAGE:
 # bash journal.sh --> creates new journal entry for today's date, opens in app of choice. If journal entry already created, 
 # will open that journal and append a newline with datetime string if append_dt is set to "Y".
